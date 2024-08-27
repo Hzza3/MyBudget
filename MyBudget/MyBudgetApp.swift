@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct MyBudgetApp: App {
+    
+    private var expensesCategoriesData = ExpensesCategoriesData()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .environment(expensesCategoriesData)
         }
     }
 }
