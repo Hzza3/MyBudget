@@ -13,6 +13,7 @@ struct ExpensesCategoriesListView: View {
     
     @State var showAddSheet: Bool = false
     
+    
     var body: some View {
         NavigationStack {
             List(categoriesData.getUserExpensesCategories()) { category in

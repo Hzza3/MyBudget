@@ -10,9 +10,11 @@ import Foundation
 @Observable
 class ExpensesCategoriesData {
     
-    private let expensesCategoriesFileName = "expensesCategories"
+    private let expensesCategoriesFileName = "expenses_categories"
     
     private var userExpensesCategories: [ExpensesCategory] = []
+    
+    static var emptyExpensesCategory = ExpensesCategory(id: UUID(), name: "", limit: 0.0)
     
     init() {
         readUserSavedCategoriesFromFile()

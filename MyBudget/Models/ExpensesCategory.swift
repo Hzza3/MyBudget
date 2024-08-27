@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ExpensesCategory: Identifiable, Codable {
+class ExpensesCategory: Identifiable, Codable, Equatable, Hashable {
     var id: UUID
     var name: String
     var limit: Double
@@ -17,4 +17,12 @@ class ExpensesCategory: Identifiable, Codable {
         self.name = name
         self.limit = limit
     }
+    
+    static func ==(lhs: ExpensesCategory, rhs: ExpensesCategory) -> Bool {
+           return lhs.id == rhs.id
+       }
+
+       func hash(into hasher: inout Hasher) {
+           hasher.combine(id)
+       }
 }

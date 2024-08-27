@@ -11,11 +11,15 @@ import SwiftUI
 struct MyBudgetApp: App {
     
     private var expensesCategoriesData = ExpensesCategoriesData()
+    private var expensesListData = ExpensesListData()
+    private var incomeListData = IncomeListData()
     
     var body: some Scene {
         WindowGroup {
             HomeView()
                 .environment(expensesCategoriesData)
+                .environment(expensesListData)
+                .environment(incomeListData)
         }
     }
 }
