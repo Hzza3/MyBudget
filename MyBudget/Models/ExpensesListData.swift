@@ -38,8 +38,9 @@ class ExpensesListData  {
         JSONFilesManager.writeJSONFileWith(name: expensesListFileName, data: userExpensesList)
     }
 
-    func deleteExpensesItemAtIndex(index: IndexSet) {
-        userExpensesList.remove(atOffsets: index)
+    func deleteExpensesItemAtIndex(item: ExpenseItem) {
+        var indexOfItem = userExpensesList.firstIndex(of: item)
+        userExpensesList.removeAll { $0 == item }
         JSONFilesManager.writeJSONFileWith(name: expensesListFileName, data: userExpensesList)
     }
     

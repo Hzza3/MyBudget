@@ -12,8 +12,8 @@ struct ExpensesListView: View {
     @Environment(ExpensesListData.self) private var expensesListData
     @State var showAddExpenseItemSheet: Bool = false
     
-    private var userExpensesList: [ExpenseItem] {
-        return expensesListData.getUserExpensesList()
+    private var sortedUserExpensesList: [ExpenseItem] {
+        return expensesListData.getUserExpensesList().sorted { $0.date > $1.date}
     }
     
     var body: some View {
@@ -25,11 +25,11 @@ struct ExpensesListView: View {
                     .foregroundStyle(Color.green)
                     .padding(.leading, 15)
                 List {
-                    ForEach(userExpensesList.sorted{$0.date > $1.date}) { expenseItem in
+                    ForEach(sortedUserExpensesList) { expenseItem in
                         ExpensesListItemView(item: expenseItem)
                     }
                     .onDelete(perform: { indexSet in
-                        expensesListData.deleteExpensesItemAtIndex(index: indexSet)
+                       deleteItems(at: indexSet)
                     })
                 }
             }
@@ -37,7 +37,7 @@ struct ExpensesListView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     EditButton()
-                        .disabled(userExpensesList.isEmpty)
+                        .disabled(sortedUserExpensesList.isEmpty)
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
@@ -52,6 +52,16 @@ struct ExpensesListView: View {
             }
         }
     }
+    
+    private func deleteItems(at offsets: IndexSet) {
+          // Convert IndexSet to an array of indices
+          let indicesToDelete = offsets.sorted()
+          // Iterate over indices and delete the corresponding items
+          for index in indicesToDelete.reversed() {
+              let itemToDelete = sortedUserExpensesList[index]
+              expensesListData.deleteExpensesItemAtIndex(item: itemToDelete)
+          }
+      }
 }
 
 #Preview {
