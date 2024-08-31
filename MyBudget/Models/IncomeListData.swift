@@ -33,4 +33,13 @@ class IncomeListData {
         userIncomeList.append(item)
         JSONFilesManager.writeJSONFileWith(name: incomeListFileName, data: userIncomeList)
     }
+    
+    func deleteIncomeItemAtIndex(index: IndexSet) {
+        userIncomeList.remove(atOffsets: index)
+        JSONFilesManager.writeJSONFileWith(name: incomeListFileName, data: userIncomeList)
+    }
+    
+    func updateFileAfterEditing() {
+        JSONFilesManager.writeJSONFileWith(name: incomeListFileName, data: userIncomeList)
+    }
 }

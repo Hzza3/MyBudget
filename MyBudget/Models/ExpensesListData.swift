@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 @Observable
 class ExpensesListData  {
@@ -14,9 +15,12 @@ class ExpensesListData  {
 
     private var userExpensesList: [ExpenseItem] = []
     
-    
     init() {
         readUserSavedExpensesFromFile()
+    }
+    
+    var totalSpentAmount: Double {
+        userExpensesList.reduce(0){$0 + $1.amount}
     }
     
     func readUserSavedExpensesFromFile() {
@@ -33,14 +37,22 @@ class ExpensesListData  {
         userExpensesList.append(item)
         JSONFilesManager.writeJSONFileWith(name: expensesListFileName, data: userExpensesList)
     }
+
+    func deleteExpensesItemAtIndex(index: IndexSet) {
+        userExpensesList.remove(atOffsets: index)
+        JSONFilesManager.writeJSONFileWith(name: expensesListFileName, data: userExpensesList)
+    }
+    
+    func updateFileAfterEditing() {
+        JSONFilesManager.writeJSONFileWith(name: expensesListFileName, data: userExpensesList)
+    }
     
     func getExpensesListByCategoryId(catId: UUID) -> [ExpenseItem] {
         return userExpensesList.filter {$0.category.id == catId}
     }
     
     func getCategoryTotalSpentAmountById(catId: UUID) -> Double {
-        let expensesItems = userExpensesList.filter {$0.category.id == catId}
-        return expensesItems.reduce(0){ $0 + $1.amount }
+        let expensesItems = userExpensesList.filter {$0.category.id == catId }
+        return expensesItems.reduce(0) { $0 + $1.amount }
     }
-    
 }

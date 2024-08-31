@@ -10,7 +10,7 @@ import Foundation
 class JSONFilesManager {
     
     static func writeJSONFileWith<T: Encodable>(name: String, data: T) {
-        
+        print("Write ..")
         do {
             let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
             let fileURL = documentsDirectory.appendingPathComponent("\(name).json")
@@ -27,7 +27,7 @@ class JSONFilesManager {
     }
     
     static func readJSONFileWith<T: Decodable>(name: String) -> T? {
-        
+        print("read ..")
         do {
             let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
             let jsonFilePath = documentsDirectory.appendingPathComponent("\(name).json")

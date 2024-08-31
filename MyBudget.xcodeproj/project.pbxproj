@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EFE8FA432C8279340066ADF9 /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE8FA422C8279340066ADF9 /* PaymentMethod.swift */; };
+		EFE8FA452C8351B00066ADF9 /* ExpensesCategoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE8FA442C8351B00066ADF9 /* ExpensesCategoryItemView.swift */; };
 		EFF07B4A2C7C7DDD00BB7675 /* MyBudgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF07B492C7C7DDD00BB7675 /* MyBudgetApp.swift */; };
 		EFF07B4E2C7C7DDF00BB7675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFF07B4D2C7C7DDF00BB7675 /* Assets.xcassets */; };
 		EFF07B512C7C7DDF00BB7675 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFF07B502C7C7DDF00BB7675 /* Preview Assets.xcassets */; };
@@ -22,13 +24,15 @@
 		EFF07B6E2C7DC7B600BB7675 /* IncomeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF07B6D2C7DC7B600BB7675 /* IncomeItem.swift */; };
 		EFF07B702C7DC8A000BB7675 /* ExpensesListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF07B6F2C7DC8A000BB7675 /* ExpensesListData.swift */; };
 		EFF07B742C7DCEA200BB7675 /* AddExpensesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF07B732C7DCEA200BB7675 /* AddExpensesItemView.swift */; };
-		EFF07B762C7DF58800BB7675 /* ExpensesListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF07B752C7DF58800BB7675 /* ExpensesListHeaderView.swift */; };
 		EFF07B782C7DF64B00BB7675 /* ExpensesListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF07B772C7DF64B00BB7675 /* ExpensesListItemView.swift */; };
 		EFF07B7D2C7E0C7D00BB7675 /* IncomeListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF07B7C2C7E0C7D00BB7675 /* IncomeListData.swift */; };
 		EFF07B812C7E17F000BB7675 /* AddIncomeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF07B802C7E17F000BB7675 /* AddIncomeItemView.swift */; };
+		EFF07B832C7F330D00BB7675 /* EditExpensesCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF07B822C7F330D00BB7675 /* EditExpensesCategoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EFE8FA422C8279340066ADF9 /* PaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethod.swift; sourceTree = "<group>"; };
+		EFE8FA442C8351B00066ADF9 /* ExpensesCategoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesCategoryItemView.swift; sourceTree = "<group>"; };
 		EFF07B462C7C7DDD00BB7675 /* MyBudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFF07B492C7C7DDD00BB7675 /* MyBudgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBudgetApp.swift; sourceTree = "<group>"; };
 		EFF07B4D2C7C7DDF00BB7675 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,10 +49,11 @@
 		EFF07B6D2C7DC7B600BB7675 /* IncomeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeItem.swift; sourceTree = "<group>"; };
 		EFF07B6F2C7DC8A000BB7675 /* ExpensesListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListData.swift; sourceTree = "<group>"; };
 		EFF07B732C7DCEA200BB7675 /* AddExpensesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpensesItemView.swift; sourceTree = "<group>"; };
-		EFF07B752C7DF58800BB7675 /* ExpensesListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListHeaderView.swift; sourceTree = "<group>"; };
 		EFF07B772C7DF64B00BB7675 /* ExpensesListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListItemView.swift; sourceTree = "<group>"; };
 		EFF07B7C2C7E0C7D00BB7675 /* IncomeListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeListData.swift; sourceTree = "<group>"; };
 		EFF07B802C7E17F000BB7675 /* AddIncomeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncomeItemView.swift; sourceTree = "<group>"; };
+		EFF07B822C7F330D00BB7675 /* EditExpensesCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExpensesCategoryView.swift; sourceTree = "<group>"; };
+		EFF07B842C7F35EE00BB7675 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EFE8FA412C82791F0066ADF9 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				EFE8FA422C8279340066ADF9 /* PaymentMethod.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		EFF07B3D2C7C7DDD00BB7675 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +94,7 @@
 		EFF07B482C7C7DDD00BB7675 /* MyBudget */ = {
 			isa = PBXGroup;
 			children = (
+				EFF07B842C7F35EE00BB7675 /* Info.plist */,
 				EFF07B492C7C7DDD00BB7675 /* MyBudgetApp.swift */,
 				EFF07B682C7D2DA200BB7675 /* Helpers */,
 				EFF07B5C2C7C919100BB7675 /* Views */,
@@ -102,6 +116,7 @@
 		EFF07B5B2C7C918A00BB7675 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EFE8FA412C82791F0066ADF9 /* Enums */,
 				EFF07B662C7D203800BB7675 /* ExpensesCategoriesData.swift */,
 				EFF07B6F2C7DC8A000BB7675 /* ExpensesListData.swift */,
 				EFF07B7C2C7E0C7D00BB7675 /* IncomeListData.swift */,
@@ -136,7 +151,6 @@
 			children = (
 				EFF07B732C7DCEA200BB7675 /* AddExpensesItemView.swift */,
 				EFF07B772C7DF64B00BB7675 /* ExpensesListItemView.swift */,
-				EFF07B752C7DF58800BB7675 /* ExpensesListHeaderView.swift */,
 				EFF07B642C7C9F1700BB7675 /* ExpensesListView.swift */,
 			);
 			path = "Expenses List";
@@ -155,7 +169,9 @@
 			isa = PBXGroup;
 			children = (
 				EFF07B5E2C7C963100BB7675 /* AddCategoryView.swift */,
+				EFF07B822C7F330D00BB7675 /* EditExpensesCategoryView.swift */,
 				EFF07B572C7C915500BB7675 /* ExpensesCategoriesListView.swift */,
+				EFE8FA442C8351B00066ADF9 /* ExpensesCategoryItemView.swift */,
 			);
 			path = "Categories List";
 			sourceTree = "<group>";
@@ -238,15 +254,17 @@
 				EFF07B652C7C9F1700BB7675 /* ExpensesListView.swift in Sources */,
 				EFF07B612C7C9C4300BB7675 /* HomeView.swift in Sources */,
 				EFF07B742C7DCEA200BB7675 /* AddExpensesItemView.swift in Sources */,
+				EFE8FA452C8351B00066ADF9 /* ExpensesCategoryItemView.swift in Sources */,
 				EFF07B702C7DC8A000BB7675 /* ExpensesListData.swift in Sources */,
 				EFF07B812C7E17F000BB7675 /* AddIncomeItemView.swift in Sources */,
 				EFF07B5F2C7C963100BB7675 /* AddCategoryView.swift in Sources */,
 				EFF07B782C7DF64B00BB7675 /* ExpensesListItemView.swift in Sources */,
 				EFF07B6E2C7DC7B600BB7675 /* IncomeItem.swift in Sources */,
-				EFF07B762C7DF58800BB7675 /* ExpensesListHeaderView.swift in Sources */,
 				EFF07B6C2C7DC75B00BB7675 /* ExpenseItem.swift in Sources */,
 				EFF07B632C7C9EAA00BB7675 /* IncomeListView.swift in Sources */,
+				EFE8FA432C8279340066ADF9 /* PaymentMethod.swift in Sources */,
 				EFF07B4A2C7C7DDD00BB7675 /* MyBudgetApp.swift in Sources */,
+				EFF07B832C7F330D00BB7675 /* EditExpensesCategoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +401,7 @@
 				DEVELOPMENT_TEAM = ZV5PM8544M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyBudget/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -393,7 +412,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hazzaaMoussa.MyBudget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hazaaa.budget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -412,6 +431,7 @@
 				DEVELOPMENT_TEAM = ZV5PM8544M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyBudget/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -422,7 +442,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hazzaaMoussa.MyBudget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hazaaa.budget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

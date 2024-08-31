@@ -7,6 +7,7 @@
 
 import Foundation
 
+@Observable
 class IncomeItem: Identifiable, Codable {
     var id: UUID
     var name: String

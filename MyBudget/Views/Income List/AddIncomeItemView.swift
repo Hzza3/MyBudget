@@ -10,7 +10,7 @@ import SwiftUI
 struct AddIncomeItemView: View {
     
     @State private var name = ""
-    @State private var amount = 0.0
+    @State private var amount: Double?
     @Binding var showAddIncomeView: Bool
     
     @Environment(IncomeListData.self) var incomeListData
@@ -27,6 +27,7 @@ struct AddIncomeItemView: View {
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") {
+                        guard let amount = amount else { return }
                         let newIncome = IncomeItem(id: UUID(), name: name, amount: amount)
                         incomeListData.addItemToExpensesListArray(item: newIncome)
                         showAddIncomeView = false

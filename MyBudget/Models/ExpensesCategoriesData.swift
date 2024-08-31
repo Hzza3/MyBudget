@@ -14,7 +14,13 @@ class ExpensesCategoriesData {
     
     private var userExpensesCategories: [ExpensesCategory] = []
     
-    static var emptyExpensesCategory = ExpensesCategory(id: UUID(), name: "", limit: 0.0)
+    var firstCaregory: ExpensesCategory? {
+        return userExpensesCategories.first
+    }
+    
+    var totalCategoriesAmount: Double {
+        return userExpensesCategories.reduce(0) {$0 + $1.limit}
+    }
     
     init() {
         readUserSavedCategoriesFromFile()
@@ -29,10 +35,18 @@ class ExpensesCategoriesData {
         return userExpensesCategories
     }
 
-    
     func addItemToExpensesCategoriesArray(item: ExpensesCategory) {
         userExpensesCategories.append(item)
         JSONFilesManager.writeJSONFileWith(name: expensesCategoriesFileName, data: userExpensesCategories)
     }
     
+    func deleteCategoryAtIndex(index: IndexSet) {
+        userExpensesCategories.remove(atOffsets: index)
+        JSONFilesManager.writeJSONFileWith(name: expensesCategoriesFileName, data: userExpensesCategories)
+    }
+    
+    func updateFileAfterEditing() {
+        JSONFilesManager.writeJSONFileWith(name: expensesCategoriesFileName, data: userExpensesCategories)
+    }
+
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 
+@Observable
 class ExpensesCategory: Identifiable, Codable, Equatable, Hashable {
     var id: UUID
     var name: String
@@ -19,10 +20,10 @@ class ExpensesCategory: Identifiable, Codable, Equatable, Hashable {
     }
     
     static func ==(lhs: ExpensesCategory, rhs: ExpensesCategory) -> Bool {
-           return lhs.id == rhs.id
-       }
-
-       func hash(into hasher: inout Hasher) {
-           hasher.combine(id)
-       }
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }

@@ -13,18 +13,35 @@ struct ExpensesCategoriesListView: View {
     
     @State var showAddSheet: Bool = false
     
+    private var userCategories: [ExpensesCategory] {
+        return categoriesData.getUserExpensesCategories()
+    }
     
     var body: some View {
         NavigationStack {
-            List(categoriesData.getUserExpensesCategories()) { category in
-                HStack {
-                    Text(category.name)
-                    Spacer()
-                    Text("\(category.limit, specifier: "%.2f") E£")
+            VStack(alignment: .leading, spacing: 15.0) {
+                Text("Total Budget: \(categoriesData.totalCategoriesAmount, specifier: "%.2f")")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundStyle(Color.green)
+                    .padding(.horizontal, 15)
+                List {
+                    ForEach(userCategories) { category in
+                        Section {
+                            ExpensesCategoryItemView(category: category)
+                        }
+                    }
+                    .onDelete(perform: { indexset in
+                        categoriesData.deleteCategoryAtIndex(index: indexset)
+                    })
                 }
             }
-            .navigationTitle("Categories")
+            .navigationTitle("My Plan")
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    EditButton()
+                        .disabled(userCategories.isEmpty)
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button{
                         showAddSheet.toggle()
@@ -32,6 +49,7 @@ struct ExpensesCategoriesListView: View {
                         Image(systemName: "plus.circle")
                     }
                 }
+                
             }
             .sheet(isPresented: $showAddSheet) {
                 AddCategoryView(showAddCategory: $showAddSheet)

@@ -27,9 +27,7 @@ struct AddCategoryView: View {
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") {
-                        let newCategory = ExpensesCategory(id: UUID(), name: name, limit: amount)
-                        categoriesData.addItemToExpensesCategoriesArray(item: newCategory)
-                        showAddCategory = false
+                       addNewCategory()
                     }
                 }
                 ToolbarItem(placement: .cancellationAction) {
@@ -39,5 +37,11 @@ struct AddCategoryView: View {
                 }
             }
         }
+    }
+    
+    func addNewCategory() {
+        let newCategory = ExpensesCategory(id: UUID(), name: name, limit: amount)
+        categoriesData.addItemToExpensesCategoriesArray(item: newCategory)
+        showAddCategory = false
     }
 }
